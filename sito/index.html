@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruno Baldini — Data Analyst &amp; Business Intelligence</title>
+<meta name="description" content="Portfolio di Bruno Baldini, Data Analyst e consulente Business Intelligence a Firenze. Power BI, SQL, modelli dati per il luxury retail.">
+<meta property="og:title" content="Bruno Baldini — Data Analyst &amp; Business Intelligence">
+<meta property="og:description" content="Portfolio: esperienze, competenze e progetti in Power BI, SQL e analisi dati.">
+<meta property="og:image" content="assets/portrait-cv.jpg">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;family=Archivo:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin:0; background:#f2f4f2; color:#4a6b55; -webkit-font-smoothing:antialiased; }
+  a { color:#4a6b55; text-decoration:none; }
+  a:hover { color:#2b3d45; }
+  ::selection { background:#dbe7dd; }
+  html { scroll-behavior:smooth; }
+</style>
+</helmet>
+<div style="font-family:Archivo,Helvetica,sans-serif;background:#f2f4f2;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:20;background:#f2f4f2;padding:18px 40px;display:flex;justify-content:space-between;align-items:baseline;gap:24px">
+    
+    
+  <nav style="display:flex;gap:22px;align-items:baseline;font-size:16px;color:#456b52">
+      <a href="#profilo" style="color:#456b52" style-hover="color:#2b3d45">{{ t.nav0 }}</a>
+      <a href="#esperienze" style="color:#456b52" style-hover="color:#2b3d45">{{ t.nav1 }}</a>
+      <a href="#skills" style="color:#456b52" style-hover="color:#2b3d45">{{ t.nav2 }}</a>
+      <a href="#contatti" style="color:#456b52" style-hover="color:#2b3d45">{{ t.nav4 }}</a>
+      <button onClick="{{ toggleLang }}" style="font-family:Archivo,sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;background:none;border:1px solid #c2d3c6;padding:5px 11px;cursor:pointer;color:#456b52" style-hover="background:#6e9277;color:#f2f4f2;border-color:#6e9277">{{ langLabel }}</button>
+    </nav></header>
+
+  <section id="top" style="position:relative;padding:0 40px 96px">
+    <h1 style="font-family:Newsreader,Georgia,serif;font-weight:400;color:#6e9277;font-size:clamp(52px,11.5vw,176px);line-height:.9;letter-spacing:-.02em;margin:8px 0 0;position:relative;z-index:2">BALDINI<br>BRUNO</h1>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;align-items:start;margin-top:calc(-1 * min(8vw,150px))">
+    <div id="profilo" style="max-width:44ch;padding-top:min(8vw,150px);padding-bottom:min(8vw,150px);position:relative;z-index:2">
+      <p style="font-size:17.5px;line-height:1.5;color:#4a6b55;margin:0 0 20px;text-wrap:pretty">{{ t.heroLede }}</p>
+      <p style="font-size:17.5px;line-height:1.5;color:#4a6b55;margin:0 0 20px;text-wrap:pretty">{{ t.heroLede2 }}</p>
+      <p style="font-size:17.5px;line-height:1.5;color:#4a6b55;margin:0 0 28px;text-wrap:pretty">{{ t.heroLede3 }}</p>
+      <div style="display:flex;gap:22px;flex-wrap:wrap;font-size:16px">
+        <a href="#contatti" style="border-bottom:1px solid #a9c4b0;padding-bottom:2px">{{ t.ctaContact }}</a>
+        <a href="uploads/cv.pdf" target="_blank" style="border-bottom:1px solid #a9c4b0;padding-bottom:2px">{{ t.ctaCv }}</a>
+        <a href="https://www.linkedin.com/in/bruno-baldini/" target="_blank" style="border-bottom:1px solid #a9c4b0;padding-bottom:2px">LinkedIn</a>
+      </div>
+    </div>
+      <div style="position:relative;z-index:3;justify-self:end;width:100%;max-width:660px">
+        <img src="assets/portrait-cv.jpg" alt="Bruno Baldini" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 12%;display:block">
+      </div>
+    </div>
+  </section>
+
+  <section id="esperienze" style="background:#e6eae6;padding:64px 40px 96px">
+    <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:26px;color:#6e9277;margin:0 0 clamp(32px,4vw,56px);display:inline-block;border-bottom:1px solid #a9c4b0;padding-bottom:4px">{{ t.expTitle }}</p>
+    <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="4">
+      <article style="display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,1.6fr);gap:48px;padding:34px 0;border-top:1px solid #cfd9d0;align-items:start">
+        <div>
+          <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:28px;line-height:1.15;color:#4a6b55;margin:0 0 8px">{{ job.role }}</h3>
+          <p style="font-size:15px;color:#5d6a6d;margin:0 0 4px">{{ job.company }}</p>
+          <p style="font-size:14px;color:#5d6a6d;margin:0">{{ job.period }} · {{ job.place }}</p>
+        </div>
+        <p style="font-size:16.5px;line-height:1.6;color:#4b5457;margin:0;text-wrap:pretty">{{ job.text }}</p>
+      </article>
+    </sc-for>
+  </section>
+
+  <section id="skills" style="background:#f2f4f2;padding:56px 40px 80px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin:0 0 clamp(20px,2.4vw,32px)">
+      <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:22px;color:#6e9277;margin:0;display:inline-block;border-bottom:1px solid #a9c4b0;padding-bottom:4px">{{ t.skillsTitle }}</p>
+      <div style="display:flex;gap:10px;flex:0 0 auto">
+        <button onClick="{{ prevSkill }}" aria-label="Precedente" style="width:42px;height:42px;border:1px solid #c2d3c6;background:none;color:#456b52;font-size:18px;line-height:1;cursor:pointer;border-radius:50%" style-hover="background:#e2eae4">‹</button>
+        <button onClick="{{ nextSkill }}" aria-label="Successivo" style="width:42px;height:42px;border:1px solid #c2d3c6;background:none;color:#456b52;font-size:18px;line-height:1;cursor:pointer;border-radius:50%" style-hover="background:#e2eae4">›</button>
+      </div>
+    </div>
+    <div style="overflow:hidden;border-top:1px solid #d8dedd">
+    <div style="display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);transform:{{ skillTrack }}">
+    <sc-for list="{{ skills }}" as="s" hint-placeholder-count="3">
+      <article style="flex:0 0 100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;padding:44px 24px 40px">
+        <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:center;margin:0 0 22px;min-height:44px">{{ s.logoRow }}</div>
+        <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.15;color:#4a6b55;margin:0 0 10px">{{ s.name }}</h3>
+        <p style="font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#456b52;margin:0">{{ s.level }}</p>
+        <p style="font-size:16px;line-height:1.7;color:#4b5457;margin:40px auto 0;max-width:62ch;text-wrap:pretty">{{ s.how }}</p>
+      </article>
+    </sc-for>
+    </div>
+    </div>
+    <div style="display:flex;gap:8px;margin:22px 0 0">
+      <sc-for list="{{ skillDots }}" as="d" hint-placeholder-count="3">
+        <button onClick="{{ d.go }}" aria-label="{{ d.label }}" style="width:34px;height:3px;border:0;padding:0;cursor:pointer;background:{{ d.bg }}"></button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="progetti" style="background:#e6eae6;padding:64px 40px 96px">
+    <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:26px;color:#6e9277;margin:0 0 clamp(40px,6vw,88px);display:inline-block;border-bottom:1px solid #a9c4b0;padding-bottom:4px">{{ t.projTitle }}</p>
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="2">
+      <article style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;padding:40px 0;border-top:1px solid #cfd9d0;align-items:start">
+        <div>
+          <h3 style="font-size:clamp(26px,3.4vw,44px);font-weight:700;text-transform:uppercase;line-height:1.05;letter-spacing:-.02em;color:#6e9277;margin:0 0 18px;text-wrap:balance">{{ p.title }}</h3>
+          <p style="font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5d6a6d;margin:0">{{ p.tag }}</p>
+        </div>
+        <p style="font-size:16.5px;line-height:1.6;color:#4b5457;margin:0;text-wrap:pretty;white-space:pre-line">{{ p.text }}</p>
+      </article>
+    </sc-for>
+  </section>
+
+  <section style="background:#f2f4f2;padding:64px 40px 96px">
+    <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:26px;color:#6e9277;margin:0 0 clamp(32px,4vw,56px);display:inline-block;border-bottom:1px solid #a9c4b0;padding-bottom:4px">{{ t.eduTitle }}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:0 0 24px">
+      <sc-for list="{{ edu }}" as="e" hint-placeholder-count="2">
+        <div style="background:#fff;border:1px solid #dfe6e0;padding:32px 30px 28px;display:flex;flex-direction:column;gap:14px">
+          <p style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8aa392;margin:0">{{ e.years }}</p>
+          <h3 style="font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(22px,2.4vw,30px);line-height:1.2;color:#4a6b55;margin:0;text-wrap:pretty">{{ e.title }}</h3>
+          <p style="font-size:14.5px;line-height:1.55;color:#5d6a6d;margin:auto 0 0">{{ e.school }}</p>
+          <p style="font-family:Newsreader,Georgia,serif;font-size:26px;color:#6e9277;margin:0">{{ e.grade }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px">
+      <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
+        <div style="border-top:2px solid #a9c4b0;padding:18px 0 0">
+          <p style="font-family:Newsreader,Georgia,serif;font-size:clamp(22px,2.2vw,28px);line-height:1.15;color:#4a6b55;margin:0 0 6px">{{ l.name }}</p>
+          <p style="font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5d6a6d;margin:0">{{ l.level }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#e4ece6;padding:64px 40px 96px">
+    <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:26px;color:#4f635a;margin:0 0 clamp(28px,3.2vw,40px);display:inline-block;border-bottom:1px solid #a9c4b0;padding-bottom:4px">{{ t.pasTitle }}</p>
+    <p style="font-family:Newsreader,Georgia,serif;font-size:clamp(26px,3.2vw,42px);line-height:1.2;color:#3f5c4a;margin:0 0 clamp(32px,4vw,56px);max-width:26ch">{{ t.pasLede }}</p>
+    <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+      <sc-for list="{{ passions }}" as="p" hint-placeholder-count="3">
+        <li style="background:#fff;border:1px solid #d5e0d8;padding:32px 30px;font-size:16.5px;line-height:1.65;color:#43584c;text-wrap:pretty;white-space:pre-line">{{ p }}</li>
+      </sc-for>
+    </ul>
+  </section>
+
+  <footer id="contatti" style="background:#2b3d45;color:#eef1f0">
+    <div style="max-width:1180px;margin:0 auto;padding:104px 32px 48px">
+      <p style="font-family:Newsreader,Georgia,serif;font-style:italic;font-size:24px;color:#93a09c;margin:0 0 20px">{{ t.contactTitle }}</p>
+      <p style="font-size:clamp(28px,3.8vw,46px);font-weight:600;letter-spacing:-.025em;line-height:1.1;margin:0 0 40px;max-width:22ch">{{ t.contactLede }}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;border-top:1px solid #3a4a50;padding-top:26px;font-size:15px">
+        <div>
+          <p style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b9794;margin:0 0 7px">Email</p>
+          <a href="mailto:brunobaldini.bb@gmail.com" style="color:#eef1f0" style-hover="color:#a7cbb1">brunobaldini.bb@gmail.com</a>
+        </div>
+        <div>
+          <p style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b9794;margin:0 0 7px">{{ t.phone }}</p>
+          <a href="tel:+393347794579" style="color:#eef1f0" style-hover="color:#a7cbb1">+39 334 779 4579</a>
+        </div>
+        <div>
+          <p style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b9794;margin:0 0 7px">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/bruno-baldini/" target="_blank" style="color:#eef1f0" style-hover="color:#a7cbb1">bruno-baldini</a>
+        </div>
+        <div>
+          <p style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b9794;margin:0 0 7px">{{ t.place }}</p>
+          <span>Firenze, Italia</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:20px;margin-top:44px;font-size:11px;letter-spacing:.08em;color:#8b9794;flex-wrap:wrap">
+        <span>© 2026 Bruno Baldini</span>
+        <a href="uploads/cv.pdf" target="_blank" style="color:#8b9794" style-hover="color:#a7cbb1">{{ t.ctaCv }}</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;'it'|'en'&quot;}}">
+const LOGOS = {
+  powerbi: "https://commons.wikimedia.org/wiki/Special:FilePath/New_Power_BI_Logo.svg",
+  sql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg",
+  office: "https://commons.wikimedia.org/wiki/Special:FilePath/Microsoft_365_(2022).svg",
+  php: "https://cdn.simpleicons.org/php/777BB4",
+  c: "https://cdn.simpleicons.org/c/A8B9CC",
+  cpp: "https://cdn.simpleicons.org/cplusplus/00599C",
+  html: "https://cdn.simpleicons.org/html5/E34F26",
+  python: "https://cdn.simpleicons.org/python/3776AB",
+  claude: "https://cdn.simpleicons.org/claude/D97757",
+  chatgpt: "https://commons.wikimedia.org/wiki/Special:FilePath/ChatGPT-Logo.svg",
+  gemini: "https://cdn.simpleicons.org/googlegemini/8E75B2"
+};
+
+const SKILL_GROUPS = [
+  { id: "bi", logos: [
+    { src: LOGOS.powerbi, label: "Power BI" },
+    { src: LOGOS.sql, label: "SQL" },
+    { src: LOGOS.office, label: "Microsoft Office" }
+  ] },
+  { id: "code", logos: [
+    { src: LOGOS.php, label: "PHP" },
+    { src: LOGOS.c, label: "C" },
+    { src: LOGOS.cpp, label: "C++" },
+    { src: LOGOS.html, label: "HTML" },
+    { src: LOGOS.python, label: "Python" }
+  ] },
+  { id: "ai", logos: [
+    { src: LOGOS.claude, label: "Claude" },
+    { src: LOGOS.chatgpt, label: "ChatGPT" },
+    { src: LOGOS.gemini, label: "Gemini" },
+    { src: "assets/professionai.jpg", label: "Profession AI" }
+  ] }
+];
+
+const CONTENT = {
+  it: {
+    nav0:"Profilo", nav1:"Esperienze", nav2:"Competenze", nav3:"Progetti", nav4:"Contatti",
+    role:"Data Analyst · Business Intelligence · Firenze",
+    heroLede:"Oggi lavoro come Data Analyst per Covisian, assegnato come consulente BI presso Ferragamo, dove sviluppo dashboard e modelli dati in Power BI a supporto delle decisioni di vendita nel luxury retail. Prima sono stato consulente tecnico per Everience presso Gucci, con supporto hardware, software e di rete ai dipendenti.",
+    heroLede2:"Il percorso è iniziato in sala: da cameriere a caposala tra Firenze e Rotterdam, dove ho vissuto 7 mesi per imparare l'inglese lavorando in un ambiente multiculturale. Da lì arrivano la gestione del cliente, la risoluzione dei conflitti in tempo reale e il coordinamento di un team.",
+    heroLede3:"Tra i risultati raggiunti: laurea in Economia e Commercio con 98/110, diploma tecnico informatico con 93/100, primo posto al percorso Giardino delle Imprese con un finanziamento di 5.000 € per la startup, e la selezione come consulente BI dopo una formazione intensiva su Power BI, SQL e Tabular Editor. L'obiettivo è il Business Development in ambito tech: fare da intermediario tra le soluzioni dell'azienda e le necessità dei clienti.",
+    ctaContact:"Contattami", ctaCv:"Scarica il CV (PDF)",
+    expTitle:"Esperienze lavorative",
+    skillsTitle:"Competenze digitali",
+    eduTitle:"Formazione e lingue", projTitle:"Progetti selezionati",
+    pasTitle:"Attitudini e passioni",
+    pasLede:"Costanza e disciplina fuori dall'ufficio, curiosità dentro.",
+    contactTitle:"Contatti", contactLede:"Parliamo del prossimo passo.",
+    phone:"Telefono", place:"Sede",
+    jobs:[
+      {period:"Feb 2026 – in corso", place:"Firenze", role:"Data Analyst", company:"Covisian (c/o Ferragamo)", text:"Assegnato come consulente BI presso Ferragamo dopo un percorso di formazione intensiva su Power BI, SQL e Tabular Editor. Sviluppo dashboard e modelli dati a supporto delle decisioni di vendita nel settore luxury retail, collaborando con i referenti di business per trasformare esigenze commerciali in strumenti analitici. Gestione ed estrazione dati da database e sistemi gestionali aziendali tramite SQL; interlocuzione diretta con stakeholder di business per definire requisiti e priorità."},
+      {period:"Nov 2025 – Feb 2026", place:"Firenze", role:"Consulente Tecnico", company:"Everience (c/o Gucci)", text:"Lavorato come consulente tecnico per il gruppo Everience presso la sede di Gucci. Ho ottenuto competenze hardware, software e di rete prestando supporto tecnico ai dipendenti sia in locale che in remoto."},
+      {period:"2021 – 2024", place:"Firenze / Rotterdam", role:"Caposala e Cameriere", company:"Il Latini (Firenze) e Due Tonino (Rotterdam)", text:"Ho lavorato come cameriere presso Il ‘Latini’ a Firenze e successivamente come Caposala al ristorante ‘Due Tonino’ a Rotterdam. Ho così sviluppato soft skills come problem solving, gestione dei conflitti, teamwork, gestione del tempo e delle responsabilità, capacità di formazione e mentoring, adattabilità e flessibilità."},
+      {period:"2019", place:"Firenze", role:"Startupper", company:"Giardino delle Imprese – Fondazione CR Firenze", text:"Ideazione, in team, di una startup nell'ambito della sostenibilità ambientale, al termine di un percorso formativo con esperti. Primo posto nel progetto, con accesso a un finanziamento di 5.000 € per l'avvio del progetto."}
+    ],
+    skillGroups:[
+      {name:"Business Intelligence e dati", level:"Power BI (DAX, Tabular Editor) · SQL · Microsoft Office — Intermedio", how:"Competenze ottenute grazie ai corsi di formazione erogati dall'azienda Covisian e durante il periodo lavorativo come consulente presso Ferragamo."},
+      {name:"Linguaggi informatici", level:"PHP · C · C++ · HTML — Intermedio · Python — Base", how:"Conoscenze acquisite durante il mio percorso scolastico all'istituto tecnico Gobetti - Volta."},
+      {name:"Intelligenza artificiale", level:"Claude · ChatGPT · Gemini · Profession AI — Intermedio", how:"Tools e skills apprese grazie a corsi online e continue applicazioni durante la mia esperienza lavorativa da Data Analyst."}
+    ],
+    skillsOld:[
+      {name:"Power BI (DAX, Tabular Editor)", level:"Intermedio"},
+      {name:"SQL", level:"Intermedio"},
+      {name:"AI", level:"Intermedio"},
+      {name:"PHP", level:"Intermedio"},
+      {name:"C, C++, HTML", level:"Intermedio"},
+      {name:"Microsoft Office", level:"Intermedio"},
+      {name:"Python", level:"Base"}
+    ],
+    howPlaceholder:"",
+    slotPlaceholder:"Logo",
+    edu:[
+      {title:"Laurea in Economia e Commercio – Mercati Finanziari", years:"2021–2024", school:"Università degli Studi di Firenze", grade:"98/110"},
+      {title:"Istituto Tecnico Informatico", years:"Diploma", school:"ISIS Gobetti-Volta, Bagno a Ripoli", grade:"93/100"}
+    ],
+    langs:[
+      {name:"Italiano", level:"Madrelingua"},
+      {name:"Inglese", level:"Avanzato"},
+      {name:"Spagnolo", level:"Base · da autodidatta"}
+    ],
+    projects:[
+      {tag:"Luxury retail · Power BI", title:"Dashboard e modelli dati per le performance retail", text:"Progettazione di dashboard e modelli dati in Power BI (DAX, Tabular Editor) per l'analisi delle performance retail, con estrazione dati da database e sistemi gestionali aziendali tramite SQL."},
+      {tag:"Startup · 1° posto", title:"Startup nell'ambito della sostenibilità ambientale", text:"Ho partecipato al progetto “Giardino delle Imprese”, promosso dalla Fondazione CR Firenze. Grazie a un periodo di formazione da parte di esperti, ho avuto la possibilità di ideare insieme al mio team una startup inerente la sostenibilità ambientale.\nAl termine del progetto abbiamo ottenuto il primo posto accedendo ad un finanziamento di 5.000 € per avviare la nostra startup."}
+    ],
+    passions:[
+      "Nel mio tempo libero mi piace dedicarmi al mio fisico.\nMi alleno in palestra e corro per un totale di 5/6 giorni a settimana.",
+      "Studio da autodidatta lo spagnolo. Il mio obiettivo è quello di essere fluente in più lingue. Non voglio che la barriera linguistica mi impedisca di conoscere o di approfondire la conoscenza di una persona.",
+      "Volontariato alla Misericordia di Badia a Ripoli."
+    ]
+  },
+  en: {
+    nav0:"Profile", nav1:"Experience", nav2:"Skills", nav3:"Projects", nav4:"Contact",
+    role:"Data Analyst · Business Intelligence · Florence",
+    heroLede:"Today I work as a Data Analyst for Covisian, assigned as a BI consultant at Ferragamo, where I build Power BI dashboards and data models supporting sales decisions in luxury retail. Before that I was a technical consultant for Everience at Gucci, providing hardware, software and network support to employees.",
+    heroLede2:"It started on the restaurant floor: from waiter to head waiter between Florence and Rotterdam, where I lived for 7 months to learn English while working in a multicultural environment. That is where client management, real-time conflict resolution and team coordination come from.",
+    heroLede3:"Results so far: a degree in Economics and Business with 98/110, a technical IT diploma with 93/100, first place in the Giardino delle Imprese programme with €5,000 in funding for the startup, and selection as a BI consultant after intensive training in Power BI, SQL and Tabular Editor. The goal is Business Development in tech: acting as the link between a company's solutions and its clients' needs.",
+    ctaContact:"Get in touch", ctaCv:"Download CV (PDF)",
+    expTitle:"Work experience",
+    skillsTitle:"Digital skills",
+    eduTitle:"Education and languages", projTitle:"Selected projects",
+    pasTitle:"Attitude and interests",
+    pasLede:"Discipline outside the office, curiosity inside it.",
+    contactTitle:"Contact", contactLede:"Let's talk about the next step.",
+    phone:"Phone", place:"Based in",
+    jobs:[
+      {period:"Feb 2026 – present", place:"Florence", role:"Data Analyst", company:"Covisian (at Ferragamo)", text:"Assigned as a BI consultant at Ferragamo after intensive training in Power BI, SQL and Tabular Editor. I build dashboards and data models supporting sales decisions in luxury retail, working with business stakeholders to turn commercial needs into analytical tools. Data extraction and management from company databases and management systems via SQL; direct discussion with business stakeholders to define requirements and priorities."},
+      {period:"Nov 2025 – Feb 2026", place:"Florence", role:"Technical Consultant", company:"Everience (at Gucci)", text:"Technical consultant for the Everience group, based at Gucci. I built hardware, software and networking skills providing technical support to employees both on site and remotely."},
+      {period:"2021 – 2024", place:"Florence / Rotterdam", role:"Head Waiter and Waiter", company:"Il Latini (Florence) and Due Tonino (Rotterdam)", text:"Grew from waiter to head waiter in high-pressure settings. Developed solid soft skills: managing client relationships, resolving objections and conflicts in real time, coordinating and training floor staff (mentoring, responsibility) and adapting to a multicultural, multilingual environment."},
+      {period:"2019", place:"Florence", role:"Startupper", company:"Giardino delle Imprese – Fondazione CR Firenze", text:"Co-founded, as part of a team, a startup in environmental sustainability at the end of a training programme with industry experts. First place in the programme, with access to €5,000 in funding to launch the project."}
+    ],
+    skillGroups:[
+      {name:"Business intelligence and data", level:"Power BI (DAX, Tabular Editor) · SQL · Microsoft Office — Intermediate", how:"Skills gained through the training courses run by Covisian and during my work as a consultant at Ferragamo."},
+      {name:"Programming languages", level:"PHP · C · C++ · HTML — Intermediate · Python — Basic", how:"Knowledge acquired during my studies at the Gobetti - Volta technical institute."},
+      {name:"Artificial intelligence", level:"Claude · ChatGPT · Gemini · Profession AI — Intermediate", how:"Tools and skills learned through online courses and applied continuously in my work as a Data Analyst."}
+    ],
+    skillsOld:[
+      {name:"Power BI (DAX, Tabular Editor)", level:"Intermediate"},
+      {name:"SQL", level:"Intermediate"},
+      {name:"AI", level:"Intermediate"},
+      {name:"PHP", level:"Intermediate"},
+      {name:"C, C++, HTML", level:"Intermediate"},
+      {name:"Microsoft Office", level:"Intermediate"},
+      {name:"Python", level:"Basic"}
+    ],
+    howPlaceholder:"Describe your level here and how you got there: courses, projects at work, self-study.",
+    slotPlaceholder:"Logo",
+    edu:[
+      {title:"BSc in Economics and Business – Financial Markets", years:"2021–2024", school:"University of Florence", grade:"98/110"},
+      {title:"Technical Institute, Computer Science", years:"Diploma", school:"ISIS Gobetti-Volta, Bagno a Ripoli", grade:"93/100"}
+    ],
+    langs:[
+      {name:"Italian", level:"Native"},
+      {name:"English", level:"Advanced"},
+      {name:"Spanish", level:"Basic · self-taught"}
+    ],
+    projects:[
+      {tag:"Luxury retail · Power BI", title:"Dashboards and data models for retail performance", text:"Design of Power BI dashboards and data models (DAX, Tabular Editor) for retail performance analysis, with data extracted from company databases and management systems via SQL."},
+      {tag:"Startup · 1st place", title:"Startup in environmental sustainability", text:"Team project developed during Giardino delle Imprese – Fondazione CR Firenze. First place, with access to €5,000 in funding to launch it."}
+    ],
+    passions:[
+      "Gym 2–3 times a week and running 1–2 times: consistency and discipline I bring to work as well.",
+      "Currently teaching myself Spanish, after Italian and English.",
+      "Volunteer at Misericordia di Badia a Ripoli."
+    ]
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: null, skill: 0, paused: false };
+  get lang() { return this.state.lang || this.props.lang || "it"; }
+  goSkill(n) { this.setState({ skill: (n + 3) % 3 }); }
+  renderVals() {
+    const t = CONTENT[this.lang];
+    const skills = t.skillGroups.map((s, i) => ({
+      ...s,
+      logoRow: SKILL_GROUPS[i].logos.map(l => l.src
+        ? React.createElement("img", { key: l.label, src: l.src, alt: l.label, title: l.label,
+            style: { width: 34, height: 34, objectFit: "contain" } })
+        : React.createElement("image-slot", { key: l.label, id: l.slotId, shape: "rect", fit: "contain",
+            placeholder: l.label, style: { width: 34, height: 34 } })),
+      how: s.how || t.howPlaceholder
+    }));
+    return {
+      t, jobs: t.jobs, skills, edu: t.edu, langs: t.langs,
+      projects: t.projects, passions: t.passions,
+      langLabel: this.lang === "it" ? "EN" : "IT",
+      toggleLang: () => this.setState({ lang: this.lang === "it" ? "en" : "it" }),
+      skillTrack: "translateX(-" + this.state.skill * 100 + "%)",
+      prevSkill: () => this.goSkill(this.state.skill - 1),
+      nextSkill: () => this.goSkill(this.state.skill + 1),
+      pauseSkills: () => this.setState({ paused: true }),
+      resumeSkills: () => this.setState({ paused: false }),
+      skillDots: skills.map((s, i) => ({
+        label: s.name,
+        bg: i === this.state.skill ? "#6e9277" : "#cfd9d0",
+        go: () => this.goSkill(i)
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
